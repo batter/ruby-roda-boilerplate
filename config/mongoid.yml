@@ -1,0 +1,20 @@
+defaults: &defaults
+  host: localhost
+  autocreate_indexes: true
+  # logger: false # Will turn logging off in Mongoid >= 2.2.0
+
+development:
+  <<: *defaults
+  clients:
+    default:
+      database: roda-app
+      hosts:
+        - localhost:27017
+
+# production:
+#   <<: *defaults
+#   clients:
+#     default:
+#       database: <%= ENV['MONGO_DATABASE'] %>
+#       hosts:
+#         - <%= "#{ENV['MONGO_HOST']}:#{ENV['MONGO_PORT']}" %>
