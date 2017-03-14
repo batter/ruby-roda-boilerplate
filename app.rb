@@ -6,6 +6,7 @@ class App < Roda
   plugin :hooks
   plugin :render, engine: 'haml'
   plugin :json
+  plugin :public
   plugin :assets, css: 'application.css', js: 'application.js',
     js_compressor: :uglifier
 
@@ -19,6 +20,7 @@ class App < Roda
   end
 
   route do |r|
+    r.public
     r.assets unless ENV['RACK_ENV'] == 'production'
 
     # GET /
