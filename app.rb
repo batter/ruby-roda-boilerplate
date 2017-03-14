@@ -14,6 +14,8 @@ class App < Roda
     @@root ||= Pathname.new(File.dirname(__FILE__))
   end
 
+  compile_assets if env.production?
+
   # before hook runs before every request execution
   before do
     @payload = JSON.parse(request.env['rack.input'].read) rescue nil
