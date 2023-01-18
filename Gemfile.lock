@@ -8,7 +8,7 @@ GEM
     haml (5.2.1)
       temple (>= 0.8.0)
       tilt
-    rack (2.2.3)
+    rack (2.2.6.2)
     rack-indifferent (1.2.0)
       rack (>= 1.5)
     rake (13.0.3)
