@@ -3,6 +3,7 @@ require 'rack/indifferent'
 require 'haml'
 
 class App < Roda
+  plugin :environments
   plugin :hooks
   plugin :render, engine: 'haml'
   plugin :json
