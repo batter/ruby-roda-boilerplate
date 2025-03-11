@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'roda', '~> 3.45'
+gem 'roda', '~> 3.90'
 gem 'rack-indifferent', '~> 1.2', require: 'rack/indifferent'
 
 gem 'haml', '~> 5.2', '>= 5.2.1' # Use HAML for html templating
