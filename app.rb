@@ -18,7 +18,7 @@ class App < Roda
 
   # before hook runs before every request execution
   before do
-    @payload = JSON.parse(request.env['rack.input'].read) rescue nil
+    @payload = JSON.parse(request.env['rack.input']&.read) rescue nil
   end
 
   route do |r|
