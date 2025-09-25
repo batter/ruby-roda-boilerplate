@@ -7,7 +7,7 @@ gem 'haml', '~> 5.2', '>= 5.2.1' # Use HAML for html templating
 gem 'sass', '~> 3.7', '>= 3.7.4' # SASS for CSS yields
 gem 'uglifier', '~> 4.2' # JS compressor
 
-gem 'thin', '~> 1.8', require: false # Use Thin as the webserver
+gem 'thin', '~> 2.0', require: false # Use Thin as the webserver
 gem 'rake', '> 10.0'
 
 group :development do
