@@ -7,18 +7,18 @@ class App < Roda
   plugin :render, engine: 'haml'
   plugin :json
   plugin :public
-  plugin :assets, css: 'application.css', js: 'application.js',
-    js_compressor: :uglifier
+  plugin :environments
+  plugin :assets, css: 'application.css', js: 'application.js', js_compressor: :uglifier
 
   def self.root
     @@root ||= Pathname.new(File.dirname(__FILE__))
   end
 
-  compile_assets if env.production?
+  compile_assets if production?
 
   # before hook runs before every request execution
   before do
-    @payload = JSON.parse(request.env['rack.input'].read) rescue nil
+    @payload = JSON.parse(request.env['rack.input']&.read) rescue nil
   end
 
   route do |r|
